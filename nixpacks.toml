@@ -4,12 +4,10 @@
 [phases.setup]
 # System packages to install
 nixPkgs = [
+    "...",
     "postgresql",
     "vips",
-    "pkg-config",
-    "nodejs",
-    "yarn",
-    "git"
+    "pkg-config"
 ]
 
 [phases.install]
