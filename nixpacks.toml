@@ -5,7 +5,8 @@
 # System packages to install
 nixPkgs = [
     "postgresql",
-    "libvips",
+    "vips",
+    "pkg-config",
     "nodejs",
     "yarn",
     "git"
