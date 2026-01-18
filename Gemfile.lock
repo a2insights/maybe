@@ -620,6 +620,7 @@ PLATFORMS
   arm-linux-musl
   arm64-darwin
   x86_64-darwin
+  x86_64-linux
   x86_64-linux-gnu
   x86_64-linux-musl
 
@@ -699,8 +700,5 @@ DEPENDENCIES
   web-console
   webmock
 
-RUBY VERSION
-   ruby 3.4.7p58
-
 BUNDLED WITH
-   2.6.9
+  4.0.4
