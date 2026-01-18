@@ -4,10 +4,8 @@ require "ipaddr"
 Rails.application.configure do
   # Add Docker host to trusted proxies
   config.action_dispatch.trusted_proxies = [
-    IPAddr.new("127.0.0.1"),
-    IPAddr.new("::1"),
-    IPAddr.new("172.18.0.0/16"),
-    IPAddr.new("10.0.0.0/8")
+    IPAddr.new("0.0.0.0/0"),
+    IPAddr.new("::/0")
   ]
 
   # Settings specified here will take precedence over those in config/application.rb.
