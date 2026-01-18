@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: maybe-web
+    env_file:
+      - .env
+    # todas as variáveis do .env já estarão disponíveis
+    ports:
+      - '3000:3000'
+    restart: unless-stopped
+    networks:
+      - coolify
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: maybe-worker
+    env_file:
+      - .env
+    command: 'bundle exec sidekiq'
+    restart: unless-stopped
+    networks:
+      - coolify
+
+networks:
+  coolify:
+    external: true
