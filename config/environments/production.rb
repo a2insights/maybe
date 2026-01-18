@@ -1,6 +1,15 @@
 require "active_support/core_ext/integer/time"
+require "ipaddr"
 
 Rails.application.configure do
+  # Add Docker host to trusted proxies
+  config.action_dispatch.trusted_proxies = [
+    IPAddr.new("127.0.0.1"),
+    IPAddr.new("::1"),
+    IPAddr.new("172.18.0.0/16"),
+    IPAddr.new("10.0.0.0/8")
+  ]
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
